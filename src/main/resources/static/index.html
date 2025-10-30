@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sudoku Solver - AI Powered</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-animation">
+    <div class="particles"></div>
+    <div class="grid-lines"></div>
+  </div>
+  
+  <div class="container">
+    <header class="header">
+      <h1 class="title">
+        <span class="title-main">SUDOKU</span>
+        <span class="title-sub">AI SOLVER</span>
+      </h1>
+      <p class="subtitle">Powered by Advanced Backtracking Algorithm</p>
+    </header>
+
+    <main class="main-content">
+      <div class="sudoku-container">
+        <div id="grid" class="sudoku-grid"></div>
+        <div class="grid-glow"></div>
+      </div>
+
+      <div class="controls">
+        <div class="button-group">
+          <button id="validateBtn" class="btn btn-validate">
+            <span class="btn-text">VALIDATE</span>
+            <span class="btn-icon">🔍</span>
+          </button>
+          <button id="solveBtn" class="btn btn-solve">
+            <span class="btn-text">SOLVE</span>
+            <span class="btn-icon">🧠</span>
+          </button>
+          <button id="clearBtn" class="btn btn-clear">
+            <span class="btn-text">CLEAR</span>
+            <span class="btn-icon">🗑️</span>
+          </button>
+        </div>
+
+        <div class="status-panel">
+          <div id="validateStatus" class="status-display validate-status">
+            <div class="status-icon">🔍</div>
+            <div class="status-content">
+              <span class="status-label">VALIDATION</span>
+              <span class="status-message">Ready to validate</span>
+            </div>
+          </div>
+          
+          <div id="solveStatus" class="status-display solve-status">
+            <div class="status-icon">🧠</div>
+            <div class="status-content">
+              <span class="status-label">SOLVER</span>
+              <span class="status-message">Ready to solve</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Constraint Satisfaction • Recursive Backtracking • O(9^n) Complexity</p>
+      <p>Design by abhishek</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
