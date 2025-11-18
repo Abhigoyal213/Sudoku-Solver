@@ -1,20 +1,20 @@
-# Use lightweight Java 17 image
-FROM openjdk:17-jdk-slim
+# Use Java 17 (Temurin)
+FROM eclipse-temurin:17-jdk-jammy
 
-# Install Maven (Render doesn’t always include it)
+# Install Maven
 RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
 # Copy project files
 COPY . .
 
-# Build the app using Maven (skip tests for faster build)
+# Build using Maven
 RUN mvn clean package -DskipTests
 
-# Expose port 8080 (Spring Boot default)
+# Expose port
 EXPOSE 8080
 
-# Run the generated JAR file
+# Run JAR
 CMD ["java", "-jar", "target/sudoku-solver-1.0.0.jar"]
